@@ -16,6 +16,7 @@ export class PhotoListComponent implements OnInit {
   ) { }
 
   photos: Photo[] = [];
+  filter: string = '';
 
   ngOnInit(): void {
     const userName = this.activatedRoute.snapshot.params.userName;
@@ -23,6 +24,11 @@ export class PhotoListComponent implements OnInit {
     this.photoService
     .listenFromUser(userName)
     .subscribe(photos => this.photos = photos)
+  }
+
+
+  getValue(event: Event): string {
+    return (event.target as HTMLInputElement).value
   }
 }
 
