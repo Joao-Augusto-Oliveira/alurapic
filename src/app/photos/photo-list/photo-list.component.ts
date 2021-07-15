@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { Photo } from 'src/app/types/Photo';
+import { PhotoService } from '../photo/photo.service';
 
 @Component({
   selector: 'app-photo-list',
@@ -15,10 +16,17 @@ export class PhotoListComponent implements OnInit, OnDestroy {
   photos: Photo[] = [];
   filter: string = '';
   debounce: Subject<string> = new Subject();
+  hasMore: boolean = true;
+  currentPage: number = 1;
+  userName: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private photoService: PhotoService,
+  ) { }
 
   ngOnInit(): void {
+    this.userName = this.activatedRoute.snapshot.params.userName;
     this.photos = this.activatedRoute.snapshot.data.photos;
     this.debounce
       .pipe(debounceTime(300))
@@ -31,6 +39,15 @@ export class PhotoListComponent implements OnInit, OnDestroy {
 
   getValue(event: Event): string {
     return (event.target as HTMLInputElement).value
+  }
+
+  load() {
+    this.photoService
+    .listenFromUserPaginated(this.userName, ++this.currentPage)
+    .subscribe(photos => {
+      this.photos= this.photos.concat(photos);
+      if(!photos.length) this.hasMore = false;
+    })
   }
 }
 
