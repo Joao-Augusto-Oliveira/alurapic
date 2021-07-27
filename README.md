@@ -1,27 +1,85 @@
-# Alurapic
+<div align="center">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+<h3>
 
-## Development server
+Projeto realizado no Curso de Fundamentos 1 de Angular promovido pela [Alura], utilizando **HTML**, **Bootstrap**, **Typescript** e **Angular**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+</h3>
 
-## Code scaffolding
+  <img src="./layouts/gif.gif" alt="demo-web" height="425">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+</div>
 
-## Build
+<br>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📚 **Sobre**
 
-## Running unit tests
+Aplicação consiste num repositório de imagens.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Principais tópicos sobre Angular debatidos:
+- Ciclo de vida de um componente
+- HttpClient e injeção de dependência;
+- Single Page Applications e rotas;
+- Interface OnChanges;
+- Pipe e implementação;
+- Resolvers;
+- Padrão debounce com RxJS;
+- Criação de diretiva customizada;
 
-## Running end-to-end tests
+<br>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 📌  **Tecnologias utilizadas**
+- Angular
+- TypeScript
+- Bootstrap
+- API: executar com a versão do node 8.0.0
+- Frontend: executar com a versão do node 12.19.0 ou mais recente
+<br>
+<br>
 
-## Further help
+### 🚀 **Mão na massa**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+# Clone este repositório
+$ git clone https://github.com/Joao-Augusto-Oliveira/alurapic
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd alurapic
+
+# Instale as dependências
+$ npm install
+
+# Acesse a pasta da api
+$ cd api
+
+# Instale as dependências da api
+$ npm install
+
+# Utilize a versão 8.0.0 do node (requisito)
+$ nvm use 8.0.0
+
+# Execute a api
+$ npm start
+
+# Retorne à pasta da alurapic
+$ cd ..
+
+# Execute a aplicação em modo de desenvolvimento
+$ ng serve
+
+# Acesse a seguinte url
+http://localhost:4200/user/flavio
+
+```
+
+<br>
+<br>
+
+<h3 align="center">
+Feito com 💜 por <a href="https://www.linkedin.com/in/joão-augusto-oliveira-dos-santos-9b0693195">João Augusto</a>
+<br><br> 
+</h3>
+
+<!-- Links -->
+
+[Alura]: https://www.alura.com.br//
